@@ -54,7 +54,7 @@ public class Dashboard extends Controller
   {
     Member member = Accounts.getLoggedInMember();
     Date date = new Date();
-    SimpleDateFormat ft = new SimpleDateFormat("YY-MM-dd HH:mm:ss");
+    SimpleDateFormat ft = new SimpleDateFormat("yy-MM-dd HH:mm:ss");
     Assessment assessment = new Assessment(ft.format(date), weight, chest, thigh, arm, waist, hips);
     member.assessments.add(assessment);
     member.save();

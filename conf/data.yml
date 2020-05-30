@@ -39,7 +39,7 @@ Member(m1):
     - a3
 
 Assessment(a4):
-  addDate: 03-Jun-2020 12:25:36
+  addDate: 20-05-03 12:25:36
   weight: 80
   chest: 35.0
   thigh: 12.5
@@ -48,7 +48,7 @@ Assessment(a4):
   hips: 38.0
 
 Assessment(a5):
-  addDate: 04-Jun-2020 13:25:36
+  addDate: 20-05-05 13:25:36
   weight: 81
   chest: 35.0
   thigh: 12.5
@@ -57,7 +57,7 @@ Assessment(a5):
   hips: 38.0
 
 Assessment(a6):
-  addDate: 05-Jun-2020 04:33:36
+  addDate: 20-05-07 04:33:36
   weight: 82
   chest: 34.0
   thigh: 12.5
@@ -66,7 +66,7 @@ Assessment(a6):
   hips: 38.0
 
 Assessment(a7):
-  addDate: 06-Jun-2020 18:15:36
+  addDate: 20-05-08 18:15:36
   weight: 78
   chest: 33.0
   thigh: 12.5
