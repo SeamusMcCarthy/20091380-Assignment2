@@ -3,9 +3,25 @@
 # ~~~~
 
 # Home page
-GET     /                                       Start.index
-GET     /dashboard                              Dashboard.index
-GET     /about                                  About.index
+GET     /                                                       Start.index
+GET     /signup                                                 Accounts.signup
+GET     /login                                                  Accounts.login
+POST    /register                                               Accounts.register
+POST    /authenticate                                           Accounts.authenticate
+GET     /dashboard                                              Dashboard.checkIndex
+GET     /trainerdashboard                                       Dashboard.trainerIndex
+POST    /addassessment                                          Dashboard.addAssessment
+GET     /about                                                  About.index
+GET     /admin                                                  Admin.index
+GET     /profile                                                Profile.index
+GET     /logout                                                 Accounts.logout
+GET     /dashboard/delete/{assessmentid}                        Dashboard.deleteAssessment
+GET     /members/{id}                                           Dashboard.listAssessment
+POST    /members/{id}/assessment/{assessmentid}                 Dashboard.updateComment
+GET     /deletemember/{id}                                      Accounts.deleteMember
+POST    /updatemember                                           Accounts.updateMember
+POST    /updatetrainer                                          Accounts.updateTrainer
+
 
 # Ignore favicon requests
 GET     /favicon.ico                            404

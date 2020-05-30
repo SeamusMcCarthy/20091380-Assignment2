@@ -1,8 +1,118 @@
 #{extends 'main.html' /}
 #{set title:'Dashboard' /}
+#{menu id:"dashboard"  /}
 
-#{menu id:"dashboard"/}
+<section class="ui grid raised segment center aligned middle aligned">
+  <section class="four wide column">
+      <i class="user icon huge blue"></i>
+      <p>
+        <span class="ui large text">${member.name}</span>
+      </p>
+  </section>
+  <section class="four wide column">
+    #{if idealWeight }
+      <i class="tachometer alternate icon huge green"></i>
+    #{/if}
+    #{else}
+      <i class="tachometer alternate icon huge red"></i>
+    #{/else}
+    <p>
+      <span class="ui large text">IDEAL WEIGHT INDICATOR</span>
+    </p>
+  </section>
+  <section class="four wide column">
+    <i class="heartbeat icon huge red"></i>
+    <p>
+      <span class="ui large text">BMI ${BMIValue}</span>
+    </p>
+  </section>
+  <section class="four wide column">
+    <i class="user md icon huge blue"></i>
+    <p>
+      <span class="ui large text">${level}</span>
+    </p>
+  </section>
+</section>
 
-<section class="ui segment">
-  #{mainpanel/}
+<form class="ui raised segment form" action="/addassessment" method="POST">
+  <div class="ui three column doubling grid">
+    <div class="field column segment">
+      <label>Weight</label>
+      <input placeholder="Weight" type="number" min="35" max="250" step="0.1" name="weight">
+    </div>
+    <div class="field column segment">
+      <label>Chest</label>
+      <input placeholder="Chest" type="number" name="chest">
+    </div>
+    <div class="field column segment">
+      <label>Thigh</label>
+      <input placeholder="Thigh" type="number" name="thigh">
+    </div>
+
+    <div class="field column segment">
+      <label>Upper arm</label>
+      <input placeholder="Upper arm" type="number" name="arm">
+    </div>
+    <div class="field column segmnent">
+      <label>Waist</label>
+      <input placeholder="Waist" type="number" name="waist">
+    </div>
+    <div class="field column segment">
+      <label>Hips</label>
+      <input placeholder="Hips" type="number" name="hips">
+    </div>
+  </div>
+  <button class="ui blue submit button">Add Assessment</button>
+</form>
+
+<section class="ui raised segment">
+  <header class="ui header">
+    Assessment List
+  </header>
+  <table class="ui celled table">
+    <thead>
+    <tr>
+      <th>Date (yy-mm-dd)</th>
+      <th>Weight</th>
+      <th>Chest</th>
+      <th>Thigh</th>
+      <th>Upper Arm</th>
+      <th>Waist</th>
+      <th>Hips</th>
+      <th>Trend</th>
+      <th>Comment</th>
+      <th>Delete Assessment</th>
+    </tr>
+    </thead>
+    <tbody>
+    #{list items:assessmentList, as:'assessment'}
+    <tr>
+      <td> ${assessment.addDate} </td>
+      <td> ${assessment.weight}</td>
+      <td> ${assessment.chest}</td>
+      <td> ${assessment.thigh}</td>
+      <td> ${assessment.arm}</td>
+      <td> ${assessment.waist}</td>
+      <td> ${assessment.hips}</td>
+      <td>
+        #{if assessment.weight == weights[assessment_index - 1] }
+          <i class="arrows alternate horizontal icon big"></i>
+        #{/if}
+        #{elseif assessment.weight < weights[assessment_index - 1] }
+          <i class="arrow down icon green big"></i>
+        #{/elseif}
+        #{else}
+          <i class="arrow up icon red big"></i>
+        #{/else}
+      </td>
+      <td>${assessment.comment}</td>
+      <td style="display: flex; justify-content: center">
+        <a href="/dashboard/delete/${assessment.id}">
+          <i class="icon trash black large" ></i>
+        </a>
+      </td>
+    </tr>
+    #{/list}
+    </tbody>
+  </table>
 </section>

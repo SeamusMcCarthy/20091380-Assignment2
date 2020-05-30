@@ -1,0 +1,96 @@
+Assessment(a1):
+  addDate: 20-05-01 12:25:36
+  weight: 100
+  chest: 45.0
+  thigh: 12.5
+  arm: 23.1
+  waist: 34.0
+  hips: 38.0
+
+Assessment(a2):
+  addDate: 20-05-02 12:25:36
+  weight: 98
+  chest: 45.0
+  thigh: 12.5
+  arm: 23.1
+  waist: 34.0
+  hips: 38.0
+
+Assessment(a3):
+  addDate: 20-05-03 12:25:36
+  weight: 99
+  chest: 45.0
+  thigh: 12.5
+  arm: 23.1
+  waist: 34.0
+  hips: 38.0
+
+Member(m1):
+  name: Seamus McCarthy
+  email: member1@test.com
+  password: secret
+  address: Bodyke
+  gender: M
+  height: 2.0
+  startWeight: 110
+  assessments:
+    - a1
+    - a2
+    - a3
+
+Assessment(a4):
+  addDate: 03-Jun-2020 12:25:36
+  weight: 80
+  chest: 35.0
+  thigh: 12.5
+  arm: 23.1
+  waist: 34.0
+  hips: 38.0
+
+Assessment(a5):
+  addDate: 04-Jun-2020 13:25:36
+  weight: 81
+  chest: 35.0
+  thigh: 12.5
+  arm: 23.1
+  waist: 34.0
+  hips: 38.0
+
+Assessment(a6):
+  addDate: 05-Jun-2020 04:33:36
+  weight: 82
+  chest: 34.0
+  thigh: 12.5
+  arm: 23.1
+  waist: 34.0
+  hips: 38.0
+
+Assessment(a7):
+  addDate: 06-Jun-2020 18:15:36
+  weight: 78
+  chest: 33.0
+  thigh: 12.5
+  arm: 23.1
+  waist: 34.0
+  hips: 38.0
+
+Member(m2):
+  name: Tracy McNamara
+  email: member2@test.com
+  password: secret
+  address: Bodyke
+  gender: F
+  height: 1.7
+  startWeight: 110
+  assessments:
+    - a4
+    - a5
+    - a6
+    - a7
+
+Trainer(t1):
+  name: Seamus McCarthy
+  email: trainer@test.com
+  password: secret
+  gender: M
+  specialty: Cardio

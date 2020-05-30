@@ -1,0 +1,124 @@
+#{extends 'main.html' /}
+#{set title:'Profile' /}
+
+
+#{if "${type}" == "member"}
+  #{menu id:"profile" /}
+  <section class="ui grid ">
+    <section class="eight wide column middle aligned ">
+      <form class="ui stacked segment form column" action="/updatemember" method="POST">
+        <h3 class="ui header"> Update Member Details </h3>
+        <div class="two fields">
+          <div class="field">
+            <label>Name</label>
+            <input value="${member.name}" type="text" name="name" required>
+          </div>
+          <div class="field">
+            <label for="gender">Gender</label>
+            <select name="gender" id="gender" required>
+              #{if member.gender.equals("M")}
+                <option value="M" selected>Male</option>
+              #{/if}
+              #{else}
+                <option value="M">Male</option>
+              #{/else}
+              #{if member.gender.equals("F")}
+                <option value="F" selected>Female</option>
+              #{/if}
+              #{else}
+                <option value="F">Female</option>
+              #{/else}
+              #{if member.gender.equals("Unspecified")}
+                <option value="Unspecified" selected>Unspecified</option>
+              #{/if}
+              #{else}
+                <option value="Unspecified">Unspecified</option>
+              #{/else}
+            </select>
+          </div>
+        </div>
+        <div class="field">
+          <label>Email</label>
+          <input value="${member.email}" type="email" name="email" required>
+        </div>
+        <div class="field">
+          <label>Password</label>
+          <input value="${member.password}" type="text" name="password" required>
+        </div>
+        <div class="field">
+          <label>Address</label>
+          <input value="${member.address}" type="text" name="address" required>
+        </div>
+
+        <div class="two fields">
+          <div class="field">
+            <label>Height</label>
+            <input value="${member.height}" type="number" min="1.00" max="3.00" step="0.01" name="height" required>
+          </div>
+          <div class="field">
+            <label>Weight</label>
+            <input value="${member.startWeight}" type="number" min="35.00" max="250" step="0.01" name="startWeight" required>
+          </div>
+        </div>
+        <button class="ui blue submit button"> Update </button>
+      </form>
+    </section>
+    #{rightsideimage /}
+  </section>
+#{/if}
+#{else}
+  #{trainermenu id:"profile"/}
+<section class="ui grid ">
+  <section class="eight wide column middle aligned ">
+    <form class="ui stacked segment form column" action="/updatetrainer" method="POST">
+      <h3 class="ui header"> Update Trainer Details </h3>
+      <div class="two fields">
+        <div class="field">
+          <label>Name</label>
+          <input value="${trainer.name}" type="text" name="name" required>
+        </div>
+        <div class="field">
+          <label for="gender">Gender</label>
+          <select name="gender" id="gender" required>
+            #{if trainer.gender.equals("M")}
+              <option value="M" selected>Male</option>
+            #{/if}
+            #{else}
+              <option value="M">Male</option>
+            #{/else}
+            #{if trainer.gender.equals("F")}
+              <option value="F" selected>Female</option>
+            #{/if}
+            #{else}
+              <option value="F">Female</option>
+            #{/else}
+            #{if trainer.gender.equals("Unspecified")}
+              <option value="Unspecified" selected>Unspecified</option>
+            #{/if}
+            #{else}
+              <option value="Unspecified">Unspecified</option>
+            #{/else}
+          </select>
+        </div>
+      </div>
+      <div class="field">
+        <label>Email</label>
+        <input value="${trainer.email}" type="email" name="email" required>
+      </div>
+      <div class="field">
+        <label>Password</label>
+        <input value="${trainer.password}" type="text" name="password" required>
+      </div>
+      <div class="field">
+        <label>Specialty</label>
+        <input value="${trainer.specialty}" type="text" name="specialty" required>
+      </div>
+      <button class="ui blue submit button"> Update </button>
+    </form>
+  </section>
+  #{rightsideimage /}
+</section>
+#{/else}
+
+
+

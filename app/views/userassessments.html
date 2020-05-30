@@ -1,0 +1,58 @@
+#{extends 'main.html' /}
+#{set title:'Dashboard' /}
+
+#{trainermenu id:"dashboard", gender:"${trainer.gender}"/}
+#{list items:assessmentList, as:'assessment'}
+<section class="ui raised segment">
+    <table class="ui celled table">
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Weight</th>
+                <th>Chest</th>
+                <th>Thigh</th>
+                <th>Upper Arm</th>
+                <th>Waist</th>
+                <th>Hips</th>
+                <th>Trend</th>
+                <th>Comment</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td> ${assessment.addDate} </td>
+                <td> ${assessment.weight}</td>
+                <td> ${assessment.chest}</td>
+                <td> ${assessment.thigh}</td>
+                <td> ${assessment.arm}</td>
+                <td> ${assessment.waist}</td>
+                <td> ${assessment.hips}</td>
+                <td>
+                    #{if assessment.weight == weights[assessment_index - 1] }
+                        <i class="arrows alternate horizontal icon big"></i>
+                    #{/if}
+                    #{elseif assessment.weight < weights[assessment_index - 1] }
+                        <i class="arrow down icon green big"></i>
+                    #{/elseif}
+                    #{else}
+                        <i class="arrow up icon red big"></i>
+                    #{/else}
+                </td>
+                <td>${assessment.comment}</td>
+            </tr>
+        </tbody>
+    </table>
+    <form class="ui form" action="/members/${member.id}/assessment/${assessment.id}" method="POST">
+        <div class="field">
+            <label>Comment</label>
+            #{if assessment.comment.equals("")}
+                <input type="text" placeholder="Comment" name="comment">
+            #{/if}
+            #{else}
+                <input type="text" placeholder="${assessment.comment}" name="comment">
+            #{/else}
+        </div>
+        <button class="ui blue submit button"> Update </button>
+    </form>
+</section>
+#{/list}
