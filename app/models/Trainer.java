@@ -1,12 +1,7 @@
 package models;
 
 import play.db.jpa.Model;
-
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-import javax.persistence.OneToMany;
-import java.util.ArrayList;
-import java.util.List;
 
 @Entity
 public class Trainer extends Model {
@@ -15,8 +10,6 @@ public class Trainer extends Model {
     public String password;
     public String gender;
     public String specialty;
-    @OneToMany(cascade = CascadeType.ALL)
-    public List<Assessment> commentedAssessments = new ArrayList<Assessment>();
 
     public String getName() {
         return name;

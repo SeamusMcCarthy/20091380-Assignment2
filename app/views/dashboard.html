@@ -38,28 +38,28 @@
   <div class="ui three column doubling grid">
     <div class="field column segment">
       <label>Weight</label>
-      <input placeholder="Weight" type="number" min="35" max="250" step="0.1" name="weight">
+      <input placeholder="Weight" type="number" min="35" max="250" step="0.1" name="weight" required>
     </div>
     <div class="field column segment">
       <label>Chest</label>
-      <input placeholder="Chest" type="number" name="chest">
+      <input placeholder="Chest" type="number" name="chest" required>
     </div>
     <div class="field column segment">
       <label>Thigh</label>
-      <input placeholder="Thigh" type="number" name="thigh">
+      <input placeholder="Thigh" type="number" name="thigh" required>
     </div>
 
     <div class="field column segment">
       <label>Upper arm</label>
-      <input placeholder="Upper arm" type="number" name="arm">
+      <input placeholder="Upper arm" type="number" name="arm" required>
     </div>
     <div class="field column segmnent">
       <label>Waist</label>
-      <input placeholder="Waist" type="number" name="waist">
+      <input placeholder="Waist" type="number" name="waist" required>
     </div>
     <div class="field column segment">
       <label>Hips</label>
-      <input placeholder="Hips" type="number" name="hips">
+      <input placeholder="Hips" type="number" name="hips" required>
     </div>
   </div>
   <button class="ui blue submit button">Add Assessment</button>
@@ -69,9 +69,9 @@
   <header class="ui header">
     Assessment List
   </header>
-  <table class="ui celled table">
+  <table class="ui single line striped celled table">
     <thead>
-    <tr>
+    <tr style="text-align: center">
       <th>Date (yy-mm-dd)</th>
       <th>Weight</th>
       <th>Chest</th>
@@ -81,12 +81,12 @@
       <th>Hips</th>
       <th>Trend</th>
       <th>Comment</th>
-      <th>Delete Assessment</th>
+      <th>Delete</th>
     </tr>
     </thead>
     <tbody>
     #{list items:assessmentList, as:'assessment'}
-    <tr>
+    <tr style="text-align: center; align-items: center">
       <td> ${assessment.addDate} </td>
       <td> ${assessment.weight}</td>
       <td> ${assessment.chest}</td>
