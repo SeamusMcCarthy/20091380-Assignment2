@@ -25,6 +25,15 @@ Assessment(a3):
   waist: 34.0
   hips: 38.0
 
+Assessment(a8):
+  addDate: 20-06-01 11:21:36
+  weight: 93.1
+  chest: 45.0
+  thigh: 12.5
+  arm: 23.1
+  waist: 34.0
+  hips: 38.0
+
 Member(m1):
   name: Seamus McCarthy
   email: member1@test.com
@@ -37,6 +46,7 @@ Member(m1):
     - a1
     - a2
     - a3
+    - a8
 
 Assessment(a4):
   addDate: 20-05-03 12:25:36

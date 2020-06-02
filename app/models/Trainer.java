@@ -11,6 +11,14 @@ public class Trainer extends Model {
     public String gender;
     public String specialty;
 
+    public Trainer(String name, String email, String password, String gender, String specialty) {
+        this.name = name;
+        this.email = email;
+        this.password = password;
+        this.gender = gender;
+        this.specialty = specialty;
+    }
+
     public String getName() {
         return name;
     }
@@ -48,14 +56,6 @@ public class Trainer extends Model {
     }
 
     public void setSpecialty(String specialty) {
-        this.specialty = specialty;
-    }
-
-    public Trainer(String name, String email, String password, String gender, String specialty) {
-        this.name = name;
-        this.email = email;
-        this.password = password;
-        this.gender = gender;
         this.specialty = specialty;
     }
 
